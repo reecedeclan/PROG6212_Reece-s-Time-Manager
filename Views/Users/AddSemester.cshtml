@@ -1,0 +1,79 @@
+﻿@model PROG6212_ST10043367_POEPart1.Classes.Semester
+
+@{
+    ViewData["Title"] = "AddSemester";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        background-color: #3498db;
+        font-family: Arial, sans-serif;
+    }
+
+    .semester-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .form {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    button {
+        background-color: #4caf50;
+        color: #ffffff;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    .message {
+        margin-top: 15px;
+        font-size: 14px;
+        text-align: center;
+    }
+</style>
+
+<div class="semester-page">
+    <form asp-controller="Users" asp-action="AddSemester" method="post">
+        <div class="form">
+            <h1>Add a semester:</h1>
+
+            <label class="label" asp-for="Weeks">Number of weeks in the semester:</label>
+            <input asp-for="Weeks" class="textbox">
+
+            <label class="label" asp-for="StartDate">Start date of the semester:</label>
+            <input asp-for="StartDate" class="textbox" type="date">
+
+            <label class="small-text" for="lblWarning">    </label>
+
+            <button type="submit" id="btnAddSemester" name="btnAddSemester">Create the semester</button>
+        </div>
+    </form>
+</div>

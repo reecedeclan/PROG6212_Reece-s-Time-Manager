@@ -1,0 +1,54 @@
+﻿@using PROG6212_ST10043367_FinalPOE.Models
+@model ModuleChartData
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts {
+    <script>
+        var moduleData = {
+            labels: @Html.Raw(Json.Serialize(Model?.Labels ?? new List<string>())),
+            hoursSpent: @Html.Raw(Json.Serialize(Model?.HoursSpent ?? new List<int>())),
+            idealHours: @Html.Raw(Json.Serialize(Model?.IdealHours ?? new List<int>()))
+                };
+
+        window.onload = function () {
+            var ctx = document.getElementById("moduleChart").getContext("2d");
+            var moduleChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: moduleData.labels,
+                    datasets: [
+                        {
+                            label: 'Hours Spent',
+                            data: moduleData.hoursSpent,
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Ideal Hours',
+                            data: moduleData.idealHours,
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        };
+    </script>
+}
+
+<div class="container">
+    <canvas id="moduleChart" width="400" height="200"></canvas>
+</div>

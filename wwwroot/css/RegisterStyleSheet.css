@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html >
+<html lang="en" >
+<head >
+<meta charset="UTF-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<title > Register a new account</title >
+<style >
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#container {
+    display: grid;
+    grid-template-rows: 50px 80px 80px 80px 80px 80px 80px;
+    grid-template-columns: 200px 400px 200px;
+    gap: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, button {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+#lblRegisterHeading {
+    grid-column: span 3;
+    text-align: center;
+    font-size: 24px;
+    font-style: italic;
+    margin-top: 10px;
+    color: #333;
+}
+
+</style >
+</head >
+<body >
+<div id="container" >
+<label id="lblRegisterHeading" for="txtName" > Register for the application:</label >
+
+<label for="txtName" > Name:</label >
+<input type="text" id="txtName" >
+
+<label for="txtSurname" > Surname:</label >
+<input type="text" id="txtSurname" >
+
+<label for="txtUsername" > Username:</label >
+<input type="text" id="txtUsername" >
+
+<label for="txtPassword" > Password:</label >
+<input type="password" id="txtPassword" >
+
+<label for="txtConfirmPassword" > Confirm Password:</label >
+<input type="password" id="txtConfirmPassword" >
+
+<button onclick="btnRegister_Click_1()" > Register</button >
+</div >
+</body >
+</html >

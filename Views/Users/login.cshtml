@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="login-page">
+    @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+    {
+        <script type="text/javascript">
+            window.onload = function () { alert("@ViewData["ErrorMessage"]") }
+        </script>
+    }
+    <div class="form">
+        <form class="login-form" method="post">
+            <input type="text" placeholder="Username" name="txtUsername" />
+            <input type="password" placeholder="Password" name="txtPassword" />
+            <button type="submit">login</button>
+            <p class="message">Not registered? <a href="@Url.Action("Register", "Users")">Create an account</a></p>
+        </form>
+    </div>
+</div>
