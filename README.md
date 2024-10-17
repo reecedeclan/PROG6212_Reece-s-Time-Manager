@@ -86,4 +86,4 @@ The web application uses Entity Framework Core for SQL Server database access, i
 The layered architecture ensures a separation of concerns, providing a scalable and maintainable solution for study time management.
 
 Support
-If you encounter any issues or have questions, feel free to reach out to me at st10043367@vcconnect.edu.za
+If you encounter any issues or have questions, feel free to reach out at st10043367@vcconnect.edu.za
